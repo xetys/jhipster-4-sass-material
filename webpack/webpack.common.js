@@ -17,7 +17,7 @@ module.exports = function (options) {
             'main': './src/main/webapp/app/app.main'
         },
         resolve: {
-            extensions: ['.ts', '.js'],
+            extensions: ['.ts', '.js', '.scss'],
             modules: ['node_modules']
         },
         output: {
@@ -55,7 +55,7 @@ module.exports = function (options) {
                     loader: 'raw-loader',
                     exclude: ['./src/main/webapp/index.html']
                 },
-                { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'] },
+                { test: /\.scss$/, loaders: ['to-string-loader', 'css-loader', 'sass-loader'] },
                 {
                     test: /\.css$/,
                     loader: ExtractTextPlugin.extract({

@@ -10,6 +10,7 @@ import { PaginationConfig } from '../../blocks/config/uib-pagination.config';
 
 @Component({
     selector: 'jhi-book',
+    styles: [require('./book.scss')],
     templateUrl: './book.component.html'
 })
 export class BookComponent implements OnInit {
