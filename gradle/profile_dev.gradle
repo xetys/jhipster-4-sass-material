@@ -1,0 +1,48 @@
+import org.gradle.internal.os.OperatingSystem
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'com.moowork.node'
+
+ext {
+    logbackLoglevel = "DEBUG"
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-devtools:1.4.2.RELEASE"
+}
+
+def profiles = 'dev'
+if (project.hasProperty('no-liquibase')) {
+    profiles += ',no-liquibase'
+}
+
+bootRun {
+    args = []
+}
+
+task webpack(type: NodeTask, dependsOn: 'npmInstall') {
+    if (OperatingSystem.current().isWindows()) {
+      script = project.file('node_modules/webpack/bin/webpack.js')
+    } else {
+      script = project.file('node_modules/.bin/webpack')
+    }
+    args = ["--config", "webpack/webpack.dev.js"]
+}
+war {
+    webAppDirName = 'src/main/webapp/'
+}
+
+processResources {
+    filesMatching('**/logback-spring.xml') {
+        filter {
+            it.replace('#logback.loglevel#', logbackLoglevel)
+        }
+    }
+    filesMatching('**/application.yml') {
+        filter {
+            it.replace('#spring.profiles.active#', profiles)
+        }
+    }
+}
+
+processResources.dependsOn webpack

@@ -1,0 +1,102 @@
+<div>
+    <h2><span jhiTranslate="bookstoreApp.book.home.title">Books</span>
+        <button class="btn btn-primary float-xs-right" uiSref="book.new">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="bookstoreApp.book.home.createLabel">
+            Create new Book
+            </span>
+        </button></h2>
+    <h2>
+        <button md-mini-fab uiSref="book.new" color="warn">
+            <md-icon>add</md-icon>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+
+    <div class="container-fluid">
+        <div class="row">
+        </div>
+    </div>
+    <br/>
+    <md-grid-list cols="4">
+        <md-grid-tile *ngFor="let book of books">
+            <md-card style="width: 400px">
+                <md-card-header>
+                    <md-card-title>{{book.title}}</md-card-title>
+                    <md-card-subtitle>{{book.year}}</md-card-subtitle>
+                </md-card-header>
+                <md-card-content>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cumque distinctio, dolor esse exercitationem facere fuga hic magni nulla numquam obcaecati officiis placeat porro praesentium quaerat qui quis! Quia, quis!
+                </md-card-content>
+                <md-card-actions>
+                    <button type="submit" md-raised-button
+                            uiSref="book-detail"
+                            [uiParams]="{ id: book.id }"
+                            color="warn">
+                        <span class="fa fa-eye"></span>
+                        <span class="hidden-xs hidden-sm" jhiTranslate="entity.action.view"></span>
+                    </button>
+                    <button type="submit" md-raised-button
+                            uiSref="book.edit"
+                            [uiParams]="{ id: book.id }"
+                            color="accent">
+                        <span class="fa fa-pencil"></span>
+                        <span class="hidden-xs hidden-sm" jhiTranslate="entity.action.edit"></span>
+                    </button>
+                    <button type="submit" md-raised-button
+                            uiSref="book.delete"
+                            [uiParams]="{ id: book.id }"
+                            color="primary">
+                        <span class="fa fa-remove"></span>
+                        <span class="hidden-xs hidden-sm" jhiTranslate="entity.action.delete"></span>
+                    </button>
+                </md-card-actions>
+            </md-card>
+        </md-grid-tile>
+    </md-grid-list>
+    <br/>
+    <div class="table-responsive" *ngIf="books">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="bookstoreApp.book.title">Title</span></th>
+            <th><span jhiTranslate="bookstoreApp.book.year">Year</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let book of books ;trackBy trackId">
+                <td><a uiSref="book-detail" [uiParams]="{ id: book.id }">{{book.id}}</a></td>
+                <td>{{book.title}}</td>
+                <td>{{book.year}}</td>
+                <td class="text-xs-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                uiSref="book-detail"
+                                [uiParams]="{ id: book.id }"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-xs hidden-sm" jhiTranslate="entity.action.view"></span>
+                        </button>
+                        <button type="submit"
+                                uiSref="book.edit"
+                                [uiParams]="{ id: book.id }"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-xs hidden-sm" jhiTranslate="entity.action.edit"></span>
+                        </button>
+                        <button type="submit"
+                                uiSref="book.delete"
+                                [uiParams]="{ id: book.id }"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-xs hidden-sm" jhiTranslate="entity.action.delete"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

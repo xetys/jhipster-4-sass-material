@@ -1,0 +1,13 @@
+<jhi-page-ribbon></jhi-page-ribbon>
+<md-sidenav-container>
+    <md-sidenav #sidenav>
+    </md-sidenav>
+    <jhi-navbar></jhi-navbar>
+    <button md-button (click)="sidenav.open()">
+        <md-icon>home</md-icon>
+    </button>
+    <div class="container-fluid">
+        <div class="card" ui-view="content"></div>
+        <jhi-footer></jhi-footer>
+    </div>
+</md-sidenav-container>

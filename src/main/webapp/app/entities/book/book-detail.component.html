@@ -1,0 +1,28 @@
+
+<div *ngIf="book">
+    <h2><span jhiTranslate="bookstoreApp.book.detail.title">Book</span> {{book.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal">
+        <dt><span jhiTranslate="bookstoreApp.book.title">Title</span></dt>
+        <dd>
+            <span>{{book.title}}</span>
+        </dd>
+        <dt><span jhiTranslate="bookstoreApp.book.year">Year</span></dt>
+        <dd>
+            <span>{{book.year}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            uiSref="book"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            uiSref="book.edit" [uiParams]="{ id: book.id }"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
