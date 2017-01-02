@@ -1,13 +1,8 @@
 <div>
     <h2><span jhiTranslate="bookstoreApp.book.home.title">Books</span>
-        <button class="btn btn-primary float-xs-right" uiSref="book.new">
-            <span class="fa fa-plus"></span>
-            <span  jhiTranslate="bookstoreApp.book.home.createLabel">
-            Create new Book
-            </span>
-        </button></h2>
+    </h2>
     <h2>
-        <button md-mini-fab uiSref="book.new" color="warn">
+        <button md-fab uiSref="book.new" color="warn" class="fab">
             <md-icon>add</md-icon>
         </button>
     </h2>
@@ -18,32 +13,37 @@
         </div>
     </div>
     <br/>
-    <md-grid-list cols="4">
-        <md-grid-tile *ngFor="let book of books">
-            <md-card style="width: 400px">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let book of books">
+            <md-card style="">
                 <md-card-header>
                     <md-card-title>{{book.title}}</md-card-title>
                     <md-card-subtitle>{{book.year}}</md-card-subtitle>
                 </md-card-header>
+                <img class="img-responsive"
+                    src="https://images.pexels.com/photos/46274/pexels-photo-46274.jpeg?w=1260&h=250&auto=compress&cs=tinysrgb"
+                    md-card-image>
                 <md-card-content>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cumque distinctio, dolor esse exercitationem facere fuga hic magni nulla numquam obcaecati officiis placeat porro praesentium quaerat qui quis! Quia, quis!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cumque distinctio, dolor esse exercitationem
+                    facere fuga hic magni nulla numquam obcaecati officiis placeat porro praesentium quaerat qui quis! Quia,
+                    quis!
                 </md-card-content>
                 <md-card-actions>
-                    <button type="submit" md-raised-button
+                    <button type="submit" md-button
                             uiSref="book-detail"
                             [uiParams]="{ id: book.id }"
                             color="warn">
                         <span class="fa fa-eye"></span>
                         <span class="hidden-xs hidden-sm" jhiTranslate="entity.action.view"></span>
                     </button>
-                    <button type="submit" md-raised-button
+                    <button type="submit" md-button
                             uiSref="book.edit"
                             [uiParams]="{ id: book.id }"
                             color="accent">
                         <span class="fa fa-pencil"></span>
                         <span class="hidden-xs hidden-sm" jhiTranslate="entity.action.edit"></span>
                     </button>
-                    <button type="submit" md-raised-button
+                    <button type="submit" md-button
                             uiSref="book.delete"
                             [uiParams]="{ id: book.id }"
                             color="primary">
@@ -52,17 +52,20 @@
                     </button>
                 </md-card-actions>
             </md-card>
-        </md-grid-tile>
-    </md-grid-list>
+        </div>
+    </div>
     <br/>
-    <div class="table-responsive" *ngIf="books">
+    <br/>
+    <br/>
+    <br/>
+    <div class="table-responsive" *ngIf="false && books ">
         <table class="table table-striped">
             <thead>
             <tr>
-            <th><span jhiTranslate="global.field.id">ID</span></th>
-            <th><span jhiTranslate="bookstoreApp.book.title">Title</span></th>
-            <th><span jhiTranslate="bookstoreApp.book.year">Year</span></th>
-            <th></th>
+                <th><span jhiTranslate="global.field.id">ID</span></th>
+                <th><span jhiTranslate="bookstoreApp.book.title">Title</span></th>
+                <th><span jhiTranslate="bookstoreApp.book.year">Year</span></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>

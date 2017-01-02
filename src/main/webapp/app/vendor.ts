@@ -6,7 +6,7 @@
 // import 'angular-loading-bar';
 // import 'ng-file-upload';
 
-// import '../scss/vendor.scss';
+import '../scss/vendor.scss';
 
 // import '../scss/main.scss';
 // import '../content/css/vendor.css'; TODO check what to do with this

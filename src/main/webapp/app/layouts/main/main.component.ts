@@ -5,9 +5,8 @@ import { ViewEncapsulation } from "@angular/core";
     selector: 'jhi-main',
     templateUrl: './main.component.html',
     encapsulation: ViewEncapsulation.None,
-    styles: [
-        require('../../../scss/vendor.scss'),
-        require('../../../scss/main.scss')
+    styleUrls: [
+        'main.scss'
     ]
 })
 export class JhiMainComponent {}
