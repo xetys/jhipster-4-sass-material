@@ -1,4 +1,13 @@
-<nav class="navbar navbar-dark jh-navbar">
+<md-list>
+    <md-list-item>
+        <md-icon md-list-avatar>home</md-icon>
+        <h4 md-line>
+            <a iSref="home" >Home</a>
+        </h4>
+        <p md-line>xxx</p>
+    </md-list-item>
+</md-list>
+<!--<nav class="navbar navbar-dark jh-navbar">
     <div class="jh-logo-container float-xs-left">
         <a class="jh-navbar-toggler hidden-lg-up float-xs-left" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
             <i class="fa fa-bars"></i>
@@ -16,7 +25,7 @@
                     <span class="hidden-sm-down" jhiTranslate="global.menu.home">Home</span>
                 </a>
             </li>
-            <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
+            &lt;!&ndash; jhipster-needle-add-element-to-menu - JHipster will add new menu items here &ndash;&gt;
             <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer">
                 <a class="nav-link dropdown-toggle" uiSrefActive="active" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
                     <span>
@@ -34,7 +43,7 @@
                             <span jhiTranslate="global.menu.entities.book">Book</span>
                         </a>
                     </li>
-                    <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
+                    &lt;!&ndash; jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here &ndash;&gt;
                 </ul>
             </li>
             <li *ngSwitchCase="true" has-authority="ROLE_ADMIN" ngbDropdown class="nav-item dropdown pointer">
@@ -88,7 +97,7 @@
                             <span jhiTranslate="global.menu.admin.apidocs">API</span>
                         </a>
                     </li>
-                    <!-- jhipster-needle-add-element-to-admin-menu - JHipster will add entities to the admin menu here -->
+                    &lt;!&ndash; jhipster-needle-add-element-to-admin-menu - JHipster will add entities to the admin menu here &ndash;&gt;
                     <li *ngIf="!inProduction">
                         <a class="dropdown-item" href='/h2-console' target="_tab" (click)="collapseNavbar()">
                             <i class="fa fa-fw fa-hdd-o" aria-hidden="true"></i>
@@ -162,4 +171,4 @@
             </li>
         </ul>
     </div>
-</nav>
+</nav>-->

@@ -1,4 +1,27 @@
-<div class="modal-header">
+
+<form class="form" role="form" (ngSubmit)="login()">
+<md-dialog-title>Login</md-dialog-title>
+<md-dialog-content class="text-center">
+        <md-input-container>
+            <input type="text" md-input  name="username" id="username" placeholder="{{'global.form.username.placeholder' | translate}}"
+                   [(ngModel)]="username">
+        </md-input-container>
+        <md-input-container>
+            <input type="password" md-input name="password" id="password" placeholder="{{'login.form.password.placeholder' | translate}}"
+                   [(ngModel)]="password">
+        </md-input-container>
+        <md-slide-toggle name="rememberMe" [(ngModel)]="rememberMe" checked>
+            <span jhiTranslate="login.form.rememberme">Remember me</span>
+        </md-slide-toggle>
+    <p></p>
+</md-dialog-content>
+<md-dialog-actions>
+    <button type="submit" md-raised-button color="primary">{{'login.form.button' | translate}}</button>
+    <button md-button color="warn" (click)="requestResetPassword()" >Did you forget your password?</button>
+    <button md-button >Register a new account</button>
+</md-dialog-actions>
+</form>
+<!--<div class="modal-header">
     <button aria-label="Close" data-dismiss="modal" class="close" type="button" (click)="activeModal.dismiss('closed')"><span aria-hidden="true">x</span>
     </button>
     <h4 class="modal-title" jhiTranslate="login.title">Sign in</h4>
@@ -44,4 +67,4 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->

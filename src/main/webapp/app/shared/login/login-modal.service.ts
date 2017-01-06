@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import {MdDialog} from '@angular/material';
 
 import { JhiLoginModalComponent } from './login.component';
 
@@ -7,7 +8,7 @@ import { JhiLoginModalComponent } from './login.component';
 export class LoginModalService {
     private isOpen = false;
     constructor (
-        private modalService: NgbModal,
+        private dialog: MdDialog,
     ) {}
 
     open (): NgbModalRef {
@@ -15,7 +16,14 @@ export class LoginModalService {
             return;
         }
         this.isOpen = true;
-        let modalRef = this.modalService.open(JhiLoginModalComponent);
+
+        this.dialog.open(JhiLoginModalComponent)
+            .afterClosed()
+            .subscribe(result => {
+                console.log(`Closed with: ${result}`);
+                this.isOpen = false;
+            });
+/*        let modalRef = this.modalService.open(JhiLoginModalComponent);
         modalRef.result.then(result => {
             console.log(`Closed with: ${result}`);
             this.isOpen = false;
@@ -23,6 +31,6 @@ export class LoginModalService {
             console.log(`Dismissed ${reason}`);
             this.isOpen = false;
         });
-        return modalRef;
+        return modalRef;*/
     }
 }

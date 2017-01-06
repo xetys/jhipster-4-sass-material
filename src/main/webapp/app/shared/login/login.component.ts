@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit, Renderer, ElementRef } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { MdDialogRef} from '@angular/material';
 import { StateService } from 'ui-router-ng2';
 import { JhiLanguageService, EventManager } from 'ng-jhipster';
 
@@ -8,7 +9,10 @@ import { StateStorageService } from '../auth/state-storage.service';
 
 @Component({
     selector: 'jhi-login-modal',
-    templateUrl: './login.component.html'
+    templateUrl: './login.component.html',
+    styleUrls: [
+        'login.component.scss'
+    ]
 })
 export class JhiLoginModalComponent implements OnInit, AfterViewInit {
     authenticationError: boolean;
@@ -25,7 +29,7 @@ export class JhiLoginModalComponent implements OnInit, AfterViewInit {
         private stateStorageService: StateStorageService,
         private elementRef: ElementRef,
         private renderer: Renderer,
-        private activeModal: NgbActiveModal
+        public dialogRef : MdDialogRef<JhiLoginModalComponent>
     ) {
         this.credentials = {};
     }
@@ -45,7 +49,7 @@ export class JhiLoginModalComponent implements OnInit, AfterViewInit {
             rememberMe: true
         };
         this.authenticationError = false;
-        this.activeModal.dismiss('cancel');
+        this.dialogRef.close(false);
     }
 
     login () {
@@ -55,7 +59,7 @@ export class JhiLoginModalComponent implements OnInit, AfterViewInit {
             rememberMe: this.rememberMe
         }).then(() => {
             this.authenticationError = false;
-            this.activeModal.dismiss('login success');
+            this.dialogRef.close(true);
             if (this.$state.current.name === 'register' || this.$state.current.name === 'activate' ||
                 this.$state.current.name === 'finishReset' || this.$state.current.name === 'requestReset') {
                 this.$state.go('home');
@@ -79,12 +83,12 @@ export class JhiLoginModalComponent implements OnInit, AfterViewInit {
     }
 
     register () {
-        this.activeModal.dismiss('to state register');
+        this.dialogRef.close(false);
         this.$state.go('register');
     }
 
     requestResetPassword () {
-        this.activeModal.dismiss('to state requestReset');
+        this.dialogRef.close(false);
         this.$state.go('requestReset');
     }
 }
