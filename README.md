@@ -1,15 +1,33 @@
 # Bookstore
 
-This application was generated using JHipster 3.12.1, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v3.12.1](https://jhipster.github.io/documentation-archive/v3.12.1).
+This application was generated using JHipster 3.12.2, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v3.12.2](https://jhipster.github.io/documentation-archive/v3.12.2).
 
 ## Development
+
+Before you can build this project, you must install and configure the following dependencies on your machine:
+1. [Node.js][]: We use Node to run a development web server and build the project.
+   Depending on your system, you can install Node either from source or as a pre-packaged bundle.
+
+After installing Node, you should be able to run the following command to install development tools (like
+[Bower][] and [BrowserSync][]). You will only need to run this command when dependencies change in package.json.
+
+    npm install
+
+We use [Gulp][] as our build system. Install the Gulp command-line tool globally with:
+
+    npm install -g gulp-cli
 
 Run the following commands in two separate terminals to create a blissful development experience where your browser
 auto-refreshes when files change on your hard drive.
 
-    ./gradlew -x npmInstall bootRun
-    yarn run webpack:dev
+    ./gradlew
+    gulp
 
+Bower is used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by
+specifying a newer version in `bower.json`. You can also run `bower update` and `bower install` to manage dependencies.
+Add the `-h` flag on any command to see how you can use it. For example, `bower update -h`.
+
+For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
 
 ## Building for production
 
@@ -36,7 +54,7 @@ To launch your application's tests, run:
 
 Unit tests are run by [Karma][] and written with [Jasmine][]. They're located in `src/test/javascript/` and can be run with:
 
-    yarn run e2e
+    gulp test
 
 UI end-to-end tests are powered by [Protractor][], which is built on top of WebDriverJS. They're located in `src/test/javascript/e2e`
 and can be run by starting Spring Boot in one terminal (`./gradlew bootRun`) and running the tests (`gulp itest`) in a second one.
@@ -70,13 +88,13 @@ For more information refer to [Using Docker and Docker-Compose][], this page als
 To set up a CI environment, consult the [Setting up Continuous Integration][] page.
 
 [JHipster Homepage and latest documentation]: https://jhipster.github.io
-[JHipster 3.12.1 archive]: https://jhipster.github.io/documentation-archive/v3.12.1
+[JHipster 3.12.2 archive]: https://jhipster.github.io/documentation-archive/v3.12.2
 
-[Using JHipster in development]: https://jhipster.github.io/documentation-archive/v3.12.1/development/
-[Using Docker and Docker-Compose]: https://jhipster.github.io/documentation-archive/v3.12.1/docker-compose
-[Using JHipster in production]: https://jhipster.github.io/documentation-archive/v3.12.1/production/
-[Running tests page]: https://jhipster.github.io/documentation-archive/v3.12.1/running-tests/
-[Setting up Continuous Integration]: https://jhipster.github.io/documentation-archive/v3.12.1/setting-up-ci/
+[Using JHipster in development]: https://jhipster.github.io/documentation-archive/v3.12.2/development/
+[Using Docker and Docker-Compose]: https://jhipster.github.io/documentation-archive/v3.12.2/docker-compose
+[Using JHipster in production]: https://jhipster.github.io/documentation-archive/v3.12.2/production/
+[Running tests page]: https://jhipster.github.io/documentation-archive/v3.12.2/running-tests/
+[Setting up Continuous Integration]: https://jhipster.github.io/documentation-archive/v3.12.2/setting-up-ci/
 
 
 [Node.js]: https://nodejs.org/

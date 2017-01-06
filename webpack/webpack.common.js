@@ -13,6 +13,7 @@ module.exports = function (options) {
     return {
         entry: {
             'polyfills': './src/main/webapp/app/polyfills',
+            'global': './src/main/webapp/scss/global.scss',
             'vendor': './src/main/webapp/app/vendor',
             'main': './src/main/webapp/app/app.main'
         },
@@ -55,14 +56,14 @@ module.exports = function (options) {
                     loader: 'raw-loader',
                     exclude: ['./src/main/webapp/index.html']
                 },
-                { test: /vendor\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'] },
-                { test: /\.scss$/, loaders: ['to-string-loader', 'css-loader', 'sass-loader'], exclude: /vendor\.scss/ },
                 {
-                    test: /\.css$/,
-                    loader: ExtractTextPlugin.extract({
-                        fallbackLoader: "style-loader",
-                        loader: "css-loader"
-                    })
+                    test: /\.scss$/,
+                    loaders: ['to-string-loader', 'css-loader', 'sass-loader'],
+                    exclude: /(vendor\.scss|global\.scss)/
+                },
+                {
+                    test: /(vendor\.scss|global\.scss)/,
+                    loaders: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
                 },
                 {
                     test: /\.(jpe?g|png|gif|svg|woff|woff2|ttf|eot)$/i,

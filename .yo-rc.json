@@ -1,6 +1,6 @@
 {
   "generator-jhipster": {
-    "jhipsterVersion": "3.12.1",
+    "jhipsterVersion": "3.12.2",
     "baseName": "Bookstore",
     "packageName": "cloud.ktel.demo",
     "packageFolder": "cloud/ktel/demo",
@@ -20,7 +20,6 @@
     "useSass": true,
     "clientPackageManager": "yarn",
     "applicationType": "monolith",
-    "clientFramework": "angular2",
     "testFrameworks": [
       "protractor"
     ],
@@ -29,6 +28,8 @@
     "nativeLanguage": "en",
     "languages": [
       "en"
-    ]
+    ],
+    "serviceDiscoveryType": false,
+    "clientFramework": "angular2"
   }
 }
