@@ -1,10 +1,10 @@
-<md-toolbar color="primary">
-    <button md-button (click)="sidenav.open()">
-        <md-icon>menu</md-icon>
-    </button>
-</md-toolbar>
 <jhi-page-ribbon></jhi-page-ribbon>
 <md-sidenav-container>
+    <md-toolbar color="primary">
+        <button md-button (click)="sidenav.open()">
+            <md-icon>menu</md-icon>
+        </button>
+    </md-toolbar>
     <md-sidenav #sidenav>
         <jhi-navbar></jhi-navbar>
     </md-sidenav>
