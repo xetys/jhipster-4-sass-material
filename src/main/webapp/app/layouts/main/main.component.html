@@ -1,15 +1,27 @@
 <jhi-page-ribbon></jhi-page-ribbon>
 <md-sidenav-container>
-    <md-toolbar color="primary">
-        <button md-button (click)="sidenav.open()">
-            <md-icon>menu</md-icon>
-        </button>
-    </md-toolbar>
     <md-sidenav #sidenav>
-        <jhi-navbar></jhi-navbar>
+        Jolly good!
     </md-sidenav>
-    <div class="container-fluid">
-        <div class="card" ui-view="content"></div>
-        <jhi-footer></jhi-footer>
+
+    <div>
+        <button md-button (click)="sidenav.open()">
+            Open sidenav
+        </button>
     </div>
 </md-sidenav-container>
+<!--<jhi-page-ribbon></jhi-page-ribbon>-->
+<!--<md-sidenav-container>-->
+    <!--<md-toolbar color="primary">-->
+        <!--<button md-button (click)="sidenav.open()">-->
+            <!--<md-icon>menu</md-icon>-->
+        <!--</button>-->
+    <!--</md-toolbar>-->
+    <!--<md-sidenav #sidenav>-->
+        <!--<jhi-navbar></jhi-navbar>-->
+    <!--</md-sidenav>-->
+    <!--<div class="container-fluid">-->
+        <!--<div class="card" ui-view="content"></div>-->
+        <!--<jhi-footer></jhi-footer>-->
+    <!--</div>-->
+<!--</md-sidenav-container>-->

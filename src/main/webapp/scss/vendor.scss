@@ -5,6 +5,7 @@ put Sass variables here:
 eg $input-color: red;
 ****************************/
 
+@import "~reset-css/reset";
 @import '~@angular/material/core/theming/prebuilt/indigo-pink';
 @import '~font-awesome/scss/font-awesome';
 @import '~flexboxgrid/css/flexboxgrid.css';
