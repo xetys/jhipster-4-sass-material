@@ -1,13 +1,10 @@
 $fa-font-path: '~font-awesome/fonts';
 
-//test
-
 /***************************
 put Sass variables here:
 eg $input-color: red;
 ****************************/
 
-@import 'node_modules/bootstrap/scss/bootstrap';
-
 @import '~@angular/material/core/theming/prebuilt/indigo-pink';
-@import 'node_modules/font-awesome/scss/font-awesome';
+@import '~font-awesome/scss/font-awesome';
+@import '~flexboxgrid/css/flexboxgrid.css';
