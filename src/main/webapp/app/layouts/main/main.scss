@@ -1,21 +1,25 @@
-$small-breakpoint-width: 840px;
-.sidenav-toggle {
-    padding: 0;
-    margin: 8px;
-    min-width: 64px;
-    display: none;
-    @media (max-width: $small-breakpoint-width) {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    md-icon {
-        font-size: 30px;
-        height: 64px;
-        width: 64px;
-        line-height: 64px;
-        color: white;
-
-    }
+//$small-breakpoint-width: 840px;
+//.sidenav-toggle {
+//    padding: 0;
+//    margin: 8px;
+//    min-width: 64px;
+//    display: none;
+//    @media (max-width: $small-breakpoint-width) {
+//        display: flex;
+//        align-items: center;
+//        justify-content: center;
+//    }
+//
+//    md-icon {
+//        font-size: 30px;
+//        height: 64px;
+//        width: 64px;
+//        line-height: 64px;
+//        color: white;
+//
+//    }
+//}
+@import '~md-dp-helper/src/dp_converter';
+#sidenav {
+    @include dp-array(('width':256));
 }
