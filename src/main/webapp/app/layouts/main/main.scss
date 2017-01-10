@@ -19,7 +19,7 @@
 //
 //    }
 //}
-@import '~md-dp-helper/src/dp_converter';
+@import '~bu-material-sass/bu_material_sass';
 #sidenav {
     @include dp-array(('width':256));
 }
