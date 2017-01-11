@@ -1,4 +1,4 @@
-
+@import '~bu-material-sass/bu_material_sass';
 /* ==============================================================
 Bootstrap tweaks
 ===============================================================*/
@@ -260,3 +260,39 @@ ui bootstrap tweaks
 
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */
+.display-2{
+    font-weight: medium;
+    @include dp-array(('font-size':45,'line-height':48, 'margin-bottom':32));
+}
+.display-1{
+    font-weight: medium;
+    @include dp-array(('font-size':34,'line-height':40, 'margin-bottom':24));
+}
+.headline{
+    font-weight: medium;
+    @include dp-array(('font-size':24,'line-height':32, 'margin-bottom':16));
+}
+
+.subheading-2{
+    font-weight: normal;
+    @include dp-array(('font-size':16,'line-height':28, 'margin-bottom':16));
+}
+.subheading-1{
+    font-weight: normal;
+    @include dp-array(('font-size':16,'line-height':24, 'margin-bottom':16));
+}
+.body-2{
+    font-weight: normal;
+    @include dp-array(('font-size':14,'line-height':24, 'margin-bottom':16));
+}
+.body-1{
+    font-weight: normal;
+    @include dp-array(('font-size':14,'line-height':20, 'margin-bottom':16));
+}
+
+p {
+    @extend .body-1;
+}
+a {
+    color: #3f51b5;
+}

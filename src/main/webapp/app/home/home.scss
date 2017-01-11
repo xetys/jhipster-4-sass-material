@@ -1,30 +1,55 @@
 /* ==========================================================================
 Main page styles
 ========================================================================== */
-
 .hipster {
     display: inline-block;
-    width: 347px;
-    height: 497px;
+    //width: 347px;
+    //height: 497px;
     background: url("../../content/images/hipster.png") no-repeat center top;
     background-size: contain;
 }
-
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi),
-only screen and (min-resolution: 2dppx) {
-    .hipster {
-        background: url("../../content/images/hipster2x.png") no-repeat center top;
-        background-size: contain;
-    }
-}
-
+//@media only screen and (-webkit-min-device-pixel-ratio: 2),
+//only screen and (min--moz-device-pixel-ratio: 2),
+//only screen and (-o-min-device-pixel-ratio: 2/1),
+//only screen and (min-device-pixel-ratio: 2),
+//only screen and (min-resolution: 192dpi),
+//only screen and (min-resolution: 2dppx) {
+//    .hipster {
+//        background: url("../../content/images/hipster2x.png") no-repeat center top;
+//        background-size: contain;
+//    }
+//}
 @import '~bu-material-sass/bu_material_sass';
+
 .jhipsterHome {
     @include dp-array(('margin':8));
 }
 
+.grid {
+    display: flex;
+    flex-grow: 0;
+    flex-wrap: wrap;
+    @include dp-array(('padding-left': 8, 'padding-top': 8));
+    .grid-element{
+        @include dp-array(('margin-right': 8, 'margin-bottom': 8));
+        flex-grow: 1;
+        @media (min-width: 800px) {
+            &:first-child{
+                flex-basis: 25%;
+            }
+            &:last-child{
+                flex-basis: 60%;
+            }
+        }
+        @media (max-width: 799px) {
+            &:first-child{
+                flex-basis: 100%;
+                height:300px;
+            }
+            &:last-child{
+                flex-basis: 100%;
+            }
+        }
+    }
+}
