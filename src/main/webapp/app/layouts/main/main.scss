@@ -4,16 +4,12 @@
     flex-grow: 0;
     flex-wrap: wrap;
     @include dp-array(('padding-left': 8, 'padding-top': 8));
+    .grid-element{
+        @include dp-array(('margin-right': 8, 'margin-bottom': 8));
+        flex-grow: 1;
+        flex-basis: 20%;
+    }
 }
-
-.grid > * {
-    flex-grow: 1;
-    flex-basis: 20%;
-}
-.grid-element{
-    @include dp-array(('margin-right': 8, 'margin-bottom': 8));
-}
-
 
 #sidenav {
     @include dp-array(('width':256, 'padding-top':24, 'padding-left':24, 'padding-right':16));
@@ -22,3 +18,4 @@
 #top-navi {
     @include dp-shadow(2);
 }
+
