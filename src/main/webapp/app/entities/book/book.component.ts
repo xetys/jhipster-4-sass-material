@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Response } from '@angular/http';
-import { EventManager, ParseLinks, PaginationUtil } from 'ng-jhipster';
-
+import { EventManager, ParseLinks, PaginationUtil, AlertService } from 'ng-jhipster';
 import { StateService } from 'ui-router-ng2';
+
 import { Book } from './book.model';
 import { BookService } from './book.service';
-import { AlertService, ITEMS_PER_PAGE, Principal } from '../../shared';
+import { ITEMS_PER_PAGE, Principal } from '../../shared';
 import { PaginationConfig } from '../../blocks/config/uib-pagination.config';
 
 @Component({
@@ -43,7 +43,7 @@ export class BookComponent implements OnInit {
         this.registerChangeInBooks();
     }
 
-    trackId (index, item: Book) {
+    trackId (index: number, item: Book) {
         return item.id;
     }
 

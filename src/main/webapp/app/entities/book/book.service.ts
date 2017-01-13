@@ -10,14 +10,18 @@ export class BookService {
 
     constructor(private http: Http) { }
 
-    create(book: Book): Observable<Response> {
-        let copy = Object.assign({}, book);
-        return this.http.post(this.resourceUrl, copy);
+    create(book: Book): Observable<Book> {
+        let copy: Book = Object.assign({}, book);
+        return this.http.post(this.resourceUrl, copy).map((res: Response) => {
+            return res.json();
+        });
     }
 
-    update(book: Book): Observable<Response> {
-        let copy = Object.assign({}, book);
-        return this.http.put(this.resourceUrl, copy);
+    update(book: Book): Observable<Book> {
+        let copy: Book = Object.assign({}, book);
+        return this.http.put(this.resourceUrl, copy).map((res: Response) => {
+            return res.json();
+        });
     }
 
     find(id: number): Observable<Book> {

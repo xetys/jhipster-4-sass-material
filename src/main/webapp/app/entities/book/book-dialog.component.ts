@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Response } from '@angular/http';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { EventManager } from 'ng-jhipster';
+import { EventManager, AlertService } from 'ng-jhipster';
 
 import { Book } from './book.model';
 import { BookService } from './book.service';
-import { AlertService } from '../../shared';
 
 
 // TODO replace ng-file-upload dependency by an ng2 depedency

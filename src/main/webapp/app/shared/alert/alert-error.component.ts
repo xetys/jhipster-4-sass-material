@@ -1,8 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
-import { TranslateService } from 'ng2-translate/ng2-translate';
-import { EventManager } from 'ng-jhipster';
-
-import { AlertService } from './alert.service';
+import { TranslateService } from 'ng2-translate';
+import { EventManager, AlertService } from 'ng-jhipster';
 import { Subscription } from 'rxjs/Rx';
 
 @Component({

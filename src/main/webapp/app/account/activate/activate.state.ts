@@ -1,7 +1,8 @@
+import { Ng2StateDeclaration } from "ui-router-ng2";
 import { JhiLanguageService } from 'ng-jhipster';
 import { ActivateComponent } from './activate.component';
 
-export const activateState = {
+export const activateState: Ng2StateDeclaration = {
     name: 'activate',
     parent: 'account',
     url: '/activate?key',
@@ -15,6 +16,6 @@ export const activateState = {
     resolve: [{
         token: 'translate',
         deps: [JhiLanguageService],
-        resolveFn: (languageService) => languageService.setLocations(['activate'])
+        resolveFn: (languageService: JhiLanguageService) => languageService.setLocations(['activate'])
     }]
 };

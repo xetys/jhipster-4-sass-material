@@ -1,4 +1,4 @@
-import { Transition } from 'ui-router-ng2';
+import { Transition, Ng2StateDeclaration } from 'ui-router-ng2';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { JhiLanguageService, PaginationUtil } from 'ng-jhipster';
 
@@ -9,7 +9,7 @@ import { BookDeleteDialogComponent } from './book-delete-dialog.component';
 import { Book } from './book.model';
 import { BookService } from './book.service';
 
-export const bookState = {
+export const bookState: Ng2StateDeclaration = {
     name: 'book',
     parent: 'entity',
     url: '/book',
@@ -24,12 +24,12 @@ export const bookState = {
         {
             token: 'translate',
             deps: [JhiLanguageService],
-            resolveFn: (languageService) => languageService.setLocations(['book'])
+            resolveFn: (languageService: JhiLanguageService) => languageService.setLocations(['book'])
         }
     ]
 };
 
-export const bookDetailState = {
+export const bookDetailState: Ng2StateDeclaration = {
     name: 'book-detail',
     parent: 'entity',
     url: '/book/:id',
@@ -44,7 +44,7 @@ export const bookDetailState = {
         {
             token: 'translate',
             deps: [JhiLanguageService],
-            resolveFn: (languageService) => languageService.setLocations(['book'])
+            resolveFn: (languageService: JhiLanguageService) => languageService.setLocations(['book'])
         },
         {
             token: 'previousState',
@@ -64,7 +64,7 @@ export const bookDetailState = {
     ]
 };
 
-export const bookNewState = {
+export const bookNewState: Ng2StateDeclaration = {
     name: 'book.new',
     url: '/new',
     data: {
@@ -85,7 +85,7 @@ export const bookNewState = {
     }
 };
 
-export const bookEditState = {
+export const bookEditState: Ng2StateDeclaration = {
     name: 'book.edit',
     url: '/{id}/edit',
     data: {
@@ -111,7 +111,7 @@ export const bookEditState = {
     }
 };
 
-export const bookDeleteState = {
+export const bookDeleteState: Ng2StateDeclaration = {
     name: 'book.delete',
     url: '/{id}/delete',
     data: {

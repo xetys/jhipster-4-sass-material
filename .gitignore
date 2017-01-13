@@ -32,6 +32,7 @@ local.properties
 .classpath
 .settings/
 .loadpath
+.factorypath
 /src/main/resources/rebel.xml
 
 # External tool builders

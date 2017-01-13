@@ -1,7 +1,8 @@
+import { Ng2StateDeclaration } from "ui-router-ng2";
 import { JhiLanguageService } from 'ng-jhipster';
 import { JhiHealthCheckComponent } from './health.component';
 
-export const healthState = {
+export const healthState: Ng2StateDeclaration = {
     name: 'jhi-health',
     parent: 'admin',
     url: '/health',
@@ -15,6 +16,6 @@ export const healthState = {
     resolve: [{
         token: 'translate',
         deps: [JhiLanguageService],
-        resolveFn: (languageService) => languageService.setLocations(['health'])
+        resolveFn: (languageService: JhiLanguageService) => languageService.setLocations(['health'])
     }]
 };

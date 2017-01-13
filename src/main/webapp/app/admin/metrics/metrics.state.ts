@@ -1,7 +1,8 @@
+import { Ng2StateDeclaration } from "ui-router-ng2";
 import { JhiLanguageService } from 'ng-jhipster';
 import { JhiMetricsMonitoringComponent } from './metrics.component';
 
-export const metricsState = {
+export const metricsState: Ng2StateDeclaration = {
     name: 'jhi-metrics',
     parent: 'admin',
     url: '/metrics',
@@ -15,6 +16,6 @@ export const metricsState = {
     resolve: [{
         token: 'translate',
         deps: [JhiLanguageService],
-        resolveFn: (languageService) => languageService.setLocations(['metrics'])
+        resolveFn: (languageService: JhiLanguageService) => languageService.setLocations(['metrics'])
     }]
 };

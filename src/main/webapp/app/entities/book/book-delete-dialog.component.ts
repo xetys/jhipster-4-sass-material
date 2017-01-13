@@ -23,7 +23,7 @@ export class BookDeleteDialogComponent {
         this.activeModal.dismiss('cancel');
     }
 
-    confirmDelete (id) {
+    confirmDelete (id: number) {
         this.bookService.delete(id).subscribe(response => {
             this.eventManager.broadcast({ name: 'bookListModification', content: 'Deleted an book'});
             this.activeModal.dismiss(true);

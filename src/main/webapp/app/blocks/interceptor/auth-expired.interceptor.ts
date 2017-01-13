@@ -1,4 +1,4 @@
-import { HttpInterceptable } from './http.interceptable';
+import { HttpInterceptor } from 'ng-jhipster';
 import { RequestOptionsArgs, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Injector } from '@angular/core';
@@ -6,7 +6,7 @@ import { AuthServerProvider } from '../../shared/auth/auth-session.service';
 import { StateStorageService } from '../../shared/auth/state-storage.service';
 import { LoginModalService } from '../../shared/login/login-modal.service';
 
-export class AuthExpiredInterceptor extends HttpInterceptable {
+export class AuthExpiredInterceptor extends HttpInterceptor {
 
     constructor(private injector: Injector,
         private stateStorageService: StateStorageService) {

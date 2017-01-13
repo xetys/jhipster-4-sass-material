@@ -1,7 +1,8 @@
+import { Ng2StateDeclaration } from "ui-router-ng2";
 import { JhiLanguageService } from 'ng-jhipster';
 import { PasswordComponent } from './password.component';
 
-export const passwordState = {
+export const passwordState: Ng2StateDeclaration = {
     name: 'password',
     parent: 'account',
     url: '/password',
@@ -15,6 +16,6 @@ export const passwordState = {
     resolve: [{
         token: 'translate',
         deps: [JhiLanguageService],
-        resolveFn: (languageService) => languageService.setLocations(['password'])
+        resolveFn: (languageService: JhiLanguageService) => languageService.setLocations(['password'])
     }]
 };

@@ -1,7 +1,8 @@
+import { Ng2StateDeclaration } from 'ui-router-ng2';
 import { JhiLanguageService } from 'ng-jhipster';
 import { HomeComponent } from './home.component';
 
-export const homeState = {
+export const homeState: Ng2StateDeclaration = {
     name: 'home',
     parent: 'app',
     url: '/',
@@ -14,6 +15,6 @@ export const homeState = {
     resolve: [{
         token: 'translate',
         deps: [JhiLanguageService],
-        resolveFn: (languageService) => languageService.setLocations(['home'])
+        resolveFn: (languageService: JhiLanguageService) => languageService.setLocations(['home'])
     }]
 };

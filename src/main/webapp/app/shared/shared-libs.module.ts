@@ -9,6 +9,7 @@ import { NgJhipsterModule } from 'ng-jhipster';
     imports: [
         NgbModule.forRoot(),
         NgJhipsterModule.forRoot({
+            i18nEnabled: true,
             defaultI18nLang: 'en'
         })
     ],

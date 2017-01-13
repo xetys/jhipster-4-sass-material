@@ -1,7 +1,8 @@
+import { Ng2StateDeclaration } from "ui-router-ng2";
 import { JhiLanguageService } from 'ng-jhipster';
 import { AuditsComponent } from './audits.component';
 
-export const auditState = {
+export const auditState: Ng2StateDeclaration = {
     name: 'audits',
     parent: 'admin',
     url: '/audits',
@@ -15,6 +16,6 @@ export const auditState = {
     resolve: [{
         token: 'translate',
         deps: [JhiLanguageService],
-        resolveFn: (languageService) => languageService.setLocations(['audits'])
+        resolveFn: (languageService: JhiLanguageService) => languageService.setLocations(['audits'])
     }]
 };

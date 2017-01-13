@@ -1,8 +1,7 @@
 import { Injector } from '@angular/core';
 import { Http, XHRBackend, RequestOptions } from '@angular/http';
-import { EventManager } from 'ng-jhipster';
+import { EventManager, InterceptableHttp } from 'ng-jhipster';
 
-import { HttpInterceptor } from './http.interceptor';
 import { StateStorageService } from '../../shared/auth/state-storage.service';
 import { AuthExpiredInterceptor } from './auth-expired.interceptor';
 import { ErrorHandlerInterceptor } from './errorhandler.interceptor';
@@ -16,7 +15,7 @@ export const customHttpProvider = () => ({
         injector: Injector,
         stateStorageService: StateStorageService,
         eventManager: EventManager
-    ) => new HttpInterceptor(
+    ) => new InterceptableHttp(
         backend,
         defaultOptions,
         [
@@ -29,7 +28,6 @@ export const customHttpProvider = () => ({
     deps: [
         XHRBackend,
         RequestOptions,
-
         Injector,
         StateStorageService,
         EventManager

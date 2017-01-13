@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Transition } from 'ui-router-ng2';
 
 import { Book } from './book.model';
 import { BookService } from './book.service';
-
-import { Transition } from 'ui-router-ng2';
 
 @Component({
     selector: 'jhi-book-detail',

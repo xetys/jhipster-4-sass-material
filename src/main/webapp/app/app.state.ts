@@ -1,8 +1,9 @@
+import { Ng2StateDeclaration } from "ui-router-ng2";
 import { JhiLanguageService } from 'ng-jhipster';
 import { NavbarComponent } from './layouts';
 import { AuthService } from './shared';
 
-export const appState = {
+export const appState: Ng2StateDeclaration = {
     name: 'app',
     abstract: true,
     views: {
@@ -17,7 +18,7 @@ export const appState = {
         {
             token: 'translate',
             deps: [JhiLanguageService],
-            resolveFn: (languageService) => languageService.setLocations([])
+            resolveFn: (languageService: JhiLanguageService) => languageService.setLocations([])
         }
     ]
 };

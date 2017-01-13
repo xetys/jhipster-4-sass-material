@@ -13,7 +13,25 @@ module.exports = function (options) {
     return {
         entry: {
             'polyfills': './src/main/webapp/app/polyfills',
-            'vendor': './src/main/webapp/app/vendor',
+            'global': './src/main/webapp/content/scss/global.scss',
+            'vendor': [
+                './src/main/webapp/app/vendor',
+                '@angular/common',
+                '@angular/compiler',
+                '@angular/core',
+                '@angular/forms',
+                '@angular/http',
+                '@angular/platform-browser',
+                '@angular/platform-browser-dynamic',
+                '@angular/upgrade',
+                '@ng-bootstrap/ng-bootstrap',
+                'angular2-cookie',
+                'jquery',
+                'ng-jhipster',
+                'ng2-webstorage',
+                'rxjs',
+                'ui-router-ng2'
+            ],
             'main': './src/main/webapp/app/app.main'
         },
         resolve: {
@@ -55,14 +73,14 @@ module.exports = function (options) {
                     loader: 'raw-loader',
                     exclude: ['./src/main/webapp/index.html']
                 },
-                { test: /vendor\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'] },
-                { test: /\.scss$/, loaders: ['to-string-loader', 'css-loader', 'sass-loader'], exclude: /vendor\.scss/ },
                 {
-                    test: /\.css$/,
-                    loader: ExtractTextPlugin.extract({
-                        fallbackLoader: "style-loader",
-                        loader: "css-loader"
-                    })
+                    test: /\.scss$/,
+                    loaders: ['to-string-loader', 'css-loader', 'sass-loader'],
+                    exclude: /(vendor\.scss|global\.scss)/
+                },
+                {
+                    test: /(vendor\.scss|global\.scss)/,
+                    loaders: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
                 },
                 {
                     test: /\.(jpe?g|png|gif|svg|woff|woff2|ttf|eot)$/i,
@@ -86,11 +104,13 @@ module.exports = function (options) {
         },
         plugins: [
             new CommonsChunkPlugin({
-                name: ['polyfills', 'vendor'].reverse()
+                names: ['manifest', 'polyfills', 'vendor'].reverse()
             }),
             new CopyWebpackPlugin([
                 { from: './node_modules/swagger-ui/dist', to: 'swagger-ui/dist' },
                 { from: './src/main/webapp/swagger-ui/', to: 'swagger-ui' },
+                { from: './src/main/webapp/favicon.ico', to: 'favicon.ico' },
+                { from: './src/main/webapp/robots.txt', to: 'robots.txt' },
                 { from: './src/main/webapp/i18n', to: 'i18n' }
             ]),
             new webpack.ProvidePlugin({

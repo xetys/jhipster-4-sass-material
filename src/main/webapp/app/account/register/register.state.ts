@@ -1,7 +1,8 @@
+import { Ng2StateDeclaration } from "ui-router-ng2";
 import { JhiLanguageService } from 'ng-jhipster';
 import { RegisterComponent } from './register.component';
 
-export const registerState = {
+export const registerState: Ng2StateDeclaration = {
     name: 'register',
     parent: 'account',
     url: '/register',
@@ -15,6 +16,6 @@ export const registerState = {
     resolve: [{
         token: 'translate',
         deps: [JhiLanguageService],
-        resolveFn: (languageService) => languageService.setLocations(['register'])
+        resolveFn: (languageService: JhiLanguageService) => languageService.setLocations(['register'])
     }]
 };
